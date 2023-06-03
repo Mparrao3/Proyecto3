@@ -4,7 +4,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 class Sire extends gatewayPago{
-	private Boolean resultadoPago=null;
+	private Boolean rslt=null;
 	@Override
 	void realizarPago(String resNumTarjeta, String resNombre,int csvTarjeta,String idReserva,int monto) {
 		try (FileWriter fileWriter = new FileWriter("Datos/Sire.txt",true)) {
@@ -12,17 +12,17 @@ class Sire extends gatewayPago{
 			fileWriter.write(Texto);
 			fileWriter.close();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
+
 			e.printStackTrace();
 		}
 		
-		resultadoPago = true;
+		rslt = true;
 	}
 
 	@Override
 	Boolean obtenerResultadoPago() {
-		// TODO Auto-generated method stub
-		return resultadoPago;
+
+		return rslt;
 	}
 
 }
